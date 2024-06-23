@@ -9,14 +9,12 @@ export class AuthController {
   @Post('register')
   async register(@Body(new ValidationPipe()) body: RegisterUserDto) {
     const { phoneNumber } = body;
-    console.log({ phoneNumber });
     return this.authService.register(phoneNumber);
   }
 
   @Post('verify')
   async verify(@Body(new ValidationPipe()) body: VerifyUserDto) {
     const { phoneNumber, otp } = body;
-    console.log({ phoneNumber, otp });
     return this.authService.verify(phoneNumber, otp);
   }
 }

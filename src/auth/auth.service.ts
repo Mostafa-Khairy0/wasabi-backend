@@ -22,7 +22,6 @@ export class AuthService {
   async verify(phoneNumber: string, otp: number) {
     try {
       const user = await this.usersService.checkOtp(phoneNumber, otp);
-      console.log({ user });
       if (!user)
         return new HttpException(
           'The OTP code uncorrect',

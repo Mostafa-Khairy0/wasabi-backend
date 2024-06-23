@@ -29,7 +29,6 @@ export class JwtInterceptor implements NestInterceptor {
         delete data.user;
         data.token = await this.generateToken(user);
       }
-      console.log({ data });
       return data;
     });
   }

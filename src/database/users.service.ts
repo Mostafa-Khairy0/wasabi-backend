@@ -42,7 +42,6 @@ export class UsersService {
             : this.deleteUser(user.id, user.otp),
         60 * 1000 * 3,
       );
-      console.log({ user });
     } catch (error) {
       console.error(error);
     }
